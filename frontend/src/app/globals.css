@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f1f5f9; /* slate-100 */
+}
+
+/* Hide scrollbars but keep functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Base glowing pulse for big mic button */
+.mic-ring-glow {
+  box-shadow: 0 0 0 16px rgba(10, 102, 194, 0.05),
+              0 0 0 32px rgba(10, 102, 194, 0.02);
+}
+
+.mic-recording-pulse {
+  animation: explode-pulse 1.5s infinite;
+}
+
+@keyframes explode-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 24px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Chat Input Bar */
+.chat-input-bar {
+  padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+}
